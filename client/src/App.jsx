@@ -11,7 +11,7 @@ function App() {
 
   const handleUserInput = async () => {
     try {
-    const response = await axios.post("http://localhost:4000/api/chat", { userInput }); //confirm if the localhost has to be 4000 as we put on the set-up; this function make an async POST request to Express and pass the user input as data in the request
+    const response = await axios.post("/api/chat", { userInput }); //confirm if the localhost has to be 4000 as we put on the set-up; this function make an async POST request to Express and pass the user input as data in the request
     setChatResponse(response.data.chatResponse); 
   } catch (error) {
     console.error ("Error making request to Express backend:", error.message);
