@@ -1,25 +1,27 @@
 var express = require('express');
 var router = express.Router();
 
-const {openAIAPIKey} = require('../config');
+const {openAIAPIKey} = require('../config'); // confirm as the API Key must be on . env && .gitignore
 const OpenAI = require('openai')
 const openai = new OpenAI();
 //const gpt3 = new openai.Completion({apiKey: openAIAPIKey});
 
-/* GET home page. */
-router.get('/api/chat', async (req, res) => {
-    const completion = await openai.chat.completions.create({
-      messages: [{ role: "system", content: "You are a helpful assistant." }],
-      model: "gpt-3.5-turbo",
-    });
+// // Set up according to documentation of ChatGPT
+
+// /* GET home page. */
+// router.get('/api/chat', async (req, res) => {
+//     const completion = await openai.chat.completions.create({
+//       messages: [{ role: "system", content: "You are a helpful assistant." }],
+//       model: "gpt-3.5-turbo",
+//     });
   
-    console.log(completion.choices[0]);
-    res.send(completion);
-  }
+//     console.log(completion.choices[0]);
+//     res.send(completion);
+//   }
 
-  );
+//   );
 
-// router.post('/api/chat', async (req, res) => {
+// // router.post('/api/chat', async (req, res) => {
 //   try {
 //     const userInput = req.body.userInput;
 
